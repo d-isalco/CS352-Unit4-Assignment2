@@ -30,7 +30,7 @@ public class CaveExplorer {
 	// The cave layout is represented as a 2D array of characters, where:
 	// 'R' represents a rock (an impassable cell)
 	// 'S' represents the start position
-	// 'E' represents the end position
+	// 'M' represents the end position
 	public CaveExplorer() {
 		cave = new char [][] {
 			"RRRRRR".toCharArray(),
@@ -65,11 +65,56 @@ public class CaveExplorer {
 		char square = cave[row][col];
 		return square == '.' || square == 'M';
 	}
-	// This method should return true if there is a path from the start to the end,
-	// and false otherwise.
+	
+	// This method should return true if there is a path from the start to the end, 
+	// and false otherwise. It will also print out the possible moves from the start position.
 	private boolean walkFrom(int row, int col) {
 
-		StringBuilder moves = new StringBuilder();
+		Stack<CaveStep> moves = new Stack<>();
+
+		moves.push(new CaveStep(row, col, ""));
+		path = ""; // Reset path
+
+		while (!moves.isEmpty()){
+
+			CaveStep current = moves.pop();
+
+			int currentRow = current.row;
+			int currentCol = current.col;
+
+			cave[currentRow][currentCol] = '*'; // Mark the path
+
+			// Check East
+			if (canMoveto(currentRow, currentCol + 1)){
+				moves.push(new CaveStep(
+					currentRow, currentCol + 1,
+				current.path + "e"));
+			}
+
+			//Check West
+			if (canMoveto(currentRow, currentCol - 1)){
+				moves.push(new CaveStep(
+					currentRow, currentCol - 1,
+				current.path + "w"));
+			}
+
+			//Check South
+			if (canMoveto(currentRow + 1, currentCol)){
+				moves.push(new CaveStep(
+					currentRow + 1, currentCol,
+				current.path + "s"));
+			}
+
+			//Check North
+			if (canMoveto(currentRow - 1, currentCol)){
+				moves.push(new CaveStep(
+					currentRow - 1, currentCol,
+				current.path + "n"));
+			}
+		}
+
+		return false; // No valid moves available
+		/*StringBuilder moves = new StringBuilder();
 
 		while (cave[row][col] != 'M') {
 			int nextRow = row;
@@ -97,6 +142,7 @@ public class CaveExplorer {
 		}
 		path = moves.toString(); // Store the path taken
 		return true; // Reached the end
+		*/
 	}
 
 	// This method should return true if there is a path from the start to the end, 
