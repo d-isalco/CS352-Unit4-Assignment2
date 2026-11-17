@@ -67,7 +67,7 @@ public class CaveExplorer {
 	}
 	
 	// This method should return true if there is a path from the start to the end, 
-	// and false otherwise. It will also print out the possible moves from the start position.
+	// and false otherwise.
 	private boolean walkFrom(int row, int col) {
 
 		Stack<CaveStep> moves = new Stack<>();
@@ -126,35 +126,6 @@ public class CaveExplorer {
 		}
 
 		return false; // No valid moves available
-		/*StringBuilder moves = new StringBuilder();
-
-		while (cave[row][col] != 'M') {
-			int nextRow = row;
-			int nextCol = col;
-
-			if(canMoveto(row - 1, col)) { // North
-				nextRow--; 
-				moves.append('n'); // Append 'n' for north move
-			} else if(canMoveto(row + 1, col)) { // South
-				nextRow++;
-				moves.append('s');// Append 's' for south move
-			} else if(canMoveto(row, col -1)){ // West
-				nextCol--;
-				moves.append('w');// Append 'w' for west move
-			} else if(canMoveto(row, col + 1)){ // East
-				nextCol++;
-				moves.append('e');// Append 'e' for east move
-			} else {
-				return false; // No valid moves available
-			}
-			
-			cave[row][col] = '*'; // Mark the path
-			row = nextRow;
-			col = nextCol;
-		}
-		path = moves.toString(); // Store the path taken
-		return true; // Reached the end
-		*/
 	}
 
 	// This method should return true if there is a path from the start to the end, 
@@ -164,11 +135,6 @@ public class CaveExplorer {
 		for (int row = 0; row < cave.length; row++) {
 			for (int col = 0; col < cave[row].length; col++) {
 				if (cave[row][col] == 'S') {
-					//System.out.println("Found S at row " + row + ", col" + col);
-					//System.out.println("North: " + canMoveto(row - 1, col));
-					//System.out.println("South: " + canMoveto(row + 1, col));
-					//System.out.println("West: " + canMoveto(row, col - 1));
-					//System.out.println("East: " + canMoveto(row, col + 1));
 					return walkFrom(row, col); // Start walking from the start position
 				}
 			}
@@ -215,7 +181,7 @@ public class CaveExplorer {
 		String startingLayout = explorer.toString();
 		System.out.println(startingLayout);
 
-		String expected = "RRRRRR\\nR..S.R\\nR.R.RR\\nR.MRRR\\nRRRRRR\\n";
+		String expected = "RRRRRR\nR..S.R\nR.R.RR\nR.MRRR\nRRRRRR\n";
 		System.out.println("Layout matches expected: " + expected.equals(startingLayout));
 
 		// Call solve
