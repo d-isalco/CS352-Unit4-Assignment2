@@ -7,7 +7,7 @@ import java.util.Scanner;
 //I hope you are able to let me have some flecibility. I was TDY all week last week and had to use my Starklink to get some of it done.
 //I thinkg the Starklink messed wiht my location settings to login. I'm still having issues, but I'll try to fix it for this week. 
 //I'm home in Florida, but I'm working with StarkLink to figure out why this is happening. 
-//test
+//test 3
 public class CaveExplorer {
 	// Step 1: Zero parameter constructor to create the specified cave
 	private char [][] cave;
