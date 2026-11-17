@@ -82,6 +82,11 @@ public class CaveExplorer {
 			int currentRow = current.row;
 			int currentCol = current.col;
 
+			// Skip locations already covered
+			if (cave[currentRow][currentCol] == '*'){
+				continue;
+			}
+
 			cave[currentRow][currentCol] = '*'; // Mark the path
 
 			// Check East
