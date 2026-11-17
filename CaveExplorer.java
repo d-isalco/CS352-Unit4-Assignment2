@@ -21,8 +21,8 @@ public class CaveExplorer {
 	public CaveExplorer() {
 		cave = new char [][] {
 			"RRRRRR".toCharArray(),
-			"R..SRR".toCharArray(),
-			"R.RRRR".toCharArray(),
+			"R..S.R".toCharArray(),
+			"R.R.RR".toCharArray(),
 			"R.MRRR".toCharArray(),
 			"RRRRRR".toCharArray()
 		};
@@ -144,7 +144,7 @@ public class CaveExplorer {
 		String startingLayout = explorer.toString();
 		System.out.println(startingLayout);
 
-		String expected = "RRRRRR\nR..SRR\nR.RRRR\nR.MRRR\nRRRRRR\n";
+		String expected = "RRRRRR\nR..S.R\nR.R.RR\nR.MRRR\nRRRRRR\n";
 		System.out.println("Layout matches expected: " + expected.equals(startingLayout));
 
 		// Call solve
