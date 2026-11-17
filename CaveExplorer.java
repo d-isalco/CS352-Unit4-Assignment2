@@ -87,7 +87,14 @@ public class CaveExplorer {
 				continue;
 			}
 
-			cave[currentRow][currentCol] = '*'; // Mark the path
+			// Check if we found the mirror pool
+			if (cave[currentRow][currentCol] == 'M'){
+				path = current.path; // Store the path taken
+				return true; // Found the mirror pool
+			}
+
+			// Mark the path
+			cave[currentRow][currentCol] = '*'; 
 
 			// Check East
 			if (canMoveto(currentRow, currentCol + 1)){
@@ -208,7 +215,7 @@ public class CaveExplorer {
 		String startingLayout = explorer.toString();
 		System.out.println(startingLayout);
 
-		String expected = "RRRRRR\nR..S.R\nR.R.RR\nR.MRRR\nRRRRRR\n";
+		String expected = "RRRRRR\\nR..S.R\\nR.R.RR\\nR.MRRR\\nRRRRRR\\n";
 		System.out.println("Layout matches expected: " + expected.equals(startingLayout));
 
 		// Call solve
