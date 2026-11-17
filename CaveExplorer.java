@@ -229,7 +229,25 @@ public class CaveExplorer {
 			System.out.println(blockedExplorer);
 			System.out.println("Reached mirror pool: " + blockedFoundPool);
 			System.out.println("Path is empty: " + blockedExplorer.getPath().isEmpty());
+		
+			//adding branching cave test
+			CaveExplorer branchExplorer = new CaveExplorer("branching.txt");
+			String branchStart = branchExplorer.toString();
+
+			System.out.println("\nStarting layout from branching.txt;");
+			System.out.println(branchStart);
+
+			boolean branchFoundPool = branchExplorer.solve();
+
+			System.out.println("Final layout: ");
+			System.out.println(branchExplorer);
+
+			System.out.println("Reached mirror pool: " + branchFoundPool);
+			System.out.println("Path taken: " + branchExplorer.getPath());
+
+			System.out.println("Path matches expected: " + "eess".equals(branchExplorer.getPath()));
 		} 
+
 		catch (FileNotFoundException e ) {
 			System.out.println("Can't find file " + fileName); 
 		}
