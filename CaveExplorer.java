@@ -245,7 +245,7 @@ public class CaveExplorer {
 			System.out.println("Reached mirror pool: " + branchFoundPool);
 			System.out.println("Path taken: " + branchExplorer.getPath());
 
-			System.out.println("Path matches expected: " + "eess".equals(branchExplorer.getPath()));
+			System.out.println("Path matches expected: " + "esse".equals(branchExplorer.getPath()));
 		} 
 
 		catch (FileNotFoundException e ) {
