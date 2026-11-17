@@ -1,6 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+//CS352 Unit 4 - Assingment 2 
+//Sir, I had issues login into myPark Account. I was not able to complete the assignement on time
+//I sent you a message in the assignment portal and cc'd you on an emial to IT on Sunday. 
+//I hope you are able to let me have some flecibility. I was TDY all week last week and had to use my Starklink to get some of it done.
+//I thinkg the Starklink messed wiht my location settings to login. I'm still having issues, but I'll try to fix it for this week. 
+//I'm home in Florida, but I'm working with StarkLink to figure out why this is happening. 
 
 public class CaveExplorer {
 	// Step 1: Zero parameter constructor to create the specified cave
