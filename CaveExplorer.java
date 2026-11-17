@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Stack;
+
 //CS352 Unit 4 - Assingment 2 
 //Sir, I had issues login into myPark Account. I was not able to complete the assignement on time
 //I sent you a message in the assignment portal and cc'd you on an emial to IT on Sunday. 
@@ -14,6 +16,17 @@ public class CaveExplorer {
 
 	private String path = ""; // This will hold the path taken to reach the end position
 
+	private static class CaveStep{
+		int row;
+		int col;
+		String path;
+
+		CaveStep(int row, int col, String path){
+			this.row = row;
+			this.col = col;
+			this.path = path;
+		}
+	}
 	// The cave layout is represented as a 2D array of characters, where:
 	// 'R' represents a rock (an impassable cell)
 	// 'S' represents the start position
